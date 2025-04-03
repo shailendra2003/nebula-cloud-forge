@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Database, Table, FileText, Users, Settings, Network, Cpu } from 'lucide-react';
+import { Shield, Database, Table, FileText, Users, Settings, Network, Cpu, ArrowRight } from 'lucide-react';
+import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -48,13 +50,13 @@ const features = [
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900/30">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Key Features
           </h2>
-          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+          <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
             Everything you need to build your backend without the hassle
           </p>
         </div>
@@ -66,7 +68,7 @@ export const Features: React.FC = () => {
               className="opacity-0 animate-fade-up"  
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
             >
-              <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800/50">
+              <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800/50 dark:border-gray-700/50">
                 <CardHeader>
                   <div className="p-2 bg-nebula-100 dark:bg-nebula-900/30 rounded-full w-fit">
                     {feature.icon}
@@ -74,11 +76,20 @@ export const Features: React.FC = () => {
                   <CardTitle className="mt-4">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
+                  <CardDescription className="dark:text-gray-300">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <Link to="/api">
+            <Button variant="outline" className="group">
+              Explore API Documentation
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

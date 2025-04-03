@@ -8,7 +8,7 @@ const FeaturesPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="flex-1 bg-background">
         <Features />
       </main>
       <Footer />

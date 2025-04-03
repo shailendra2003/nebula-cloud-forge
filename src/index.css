@@ -46,16 +46,16 @@
   }
 
   .dark {
-    --background: 222.2 47.4% 11.2%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 47.4% 11.2%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 47.4% 11.2%;
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -91,6 +91,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
@@ -103,7 +104,7 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-nebula-600 to-purple-600;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-nebula-600 to-purple-600 dark:from-nebula-400 dark:to-purple-400;
 }
 
 .delay-100 {
@@ -124,4 +125,24 @@
 
 .delay-500 {
   animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+@media (prefers-reduced-motion) {
+  .animate-fade-up, .animate-fade-in, .animate-pulse-slow, .animate-float {
+    animation: none !important;
+    opacity: 1 !important;
+  }
 }

@@ -39,10 +39,10 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="flex-1">
         <Hero />
         
-        <section className="py-24 bg-gray-50 dark:bg-gray-900">
+        <section className="py-20 bg-gray-50 dark:bg-gray-900/30">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -60,13 +60,13 @@ const Index = () => {
                   className="opacity-0 animate-fade-up"
                   style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
                 >
-                  <div className="h-full p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all">
+                  <div className="h-full p-6 bg-white dark:bg-gray-800 dark:border-gray-700 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all">
                     <h3 className="text-xl font-bold mb-2">{section.title}</h3>
                     <p className="text-gray-500 dark:text-gray-400 mb-4">{section.description}</p>
                     <Link to={section.link}>
-                      <Button variant="outline" className="w-full">
+                      <Button variant="outline" className="w-full group">
                         Explore
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </Link>
                   </div>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { GitHubIcon } from './icons/GitHubIcon';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -34,13 +35,19 @@ export const Footer: React.FC = () => {
             <h3 className="text-white font-semibold mb-4">Documentation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#features" className="hover:text-white transition-colors">Features</a>
+                <Link to="/features" className="hover:text-white transition-colors">Features</Link>
               </li>
               <li>
-                <a href="#api" className="hover:text-white transition-colors">API Reference</a>
+                <Link to="/api" className="hover:text-white transition-colors">API Reference</Link>
               </li>
               <li>
-                <a href="#quickstart" className="hover:text-white transition-colors">Quick Start</a>
+                <Link to="/architecture" className="hover:text-white transition-colors">Architecture</Link>
+              </li>
+              <li>
+                <Link to="/quickstart" className="hover:text-white transition-colors">Quickstart</Link>
+              </li>
+              <li>
+                <Link to="/roadmap" className="hover:text-white transition-colors">Roadmap</Link>
               </li>
             </ul>
           </div>
